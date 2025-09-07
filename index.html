@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Green Earth — Plant a Tree</title>
-    <!-- Tailwind CDN -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Green Earth-Plant a Tree</title>
+
+    <!-- tailwind cdn -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
     <link rel="stylesheet" href="./style/styles.css" />
   </head>
 
@@ -44,6 +46,7 @@
         </button>
       </div>
     </header>
+
     <!-- left leaf  -->
     <section
       class="relative bg-cover py-16 px-4 md:px-10 flex flex-col md:flex-row items-center justify-between"
@@ -132,6 +135,7 @@
         </div>
       </aside>
     </main>
+
     <!-- about section -->
 
     <section id="about" class="max-w-6xl mx-auto px-4 py-8">
@@ -166,21 +170,47 @@
         </div>
       </div>
     </section>
+
     <!-- our impact -->
 
     <section id="impact" class="bg-green-100 py-20">
+      <h3 class="text-3xl font-bold mb-10 text-center">Our Impact</h3>
+
       <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="bg-white p-6 rounded-xl shadow text-center">
-          <h4 class="text-2xl font-bold text-green-600">500K+</h4>
-          <p class="text-sm text-gray-600">Trees Planted</p>
+        <!-- Card 1 -->
+        <div
+          class="bg-white p-6 md:p-10 rounded-xl md:rounded-2xl shadow-md md:shadow-lg text-center min-h-[180px] md:min-h-[220px] flex flex-col justify-center transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl"
+        >
+          <h4
+            class="text-2xl md:text-4xl font-bold text-green-600 mb-1 md:mb-2"
+          >
+            500K+
+          </h4>
+          <p class="text-sm md:text-base text-gray-600">Trees Planted</p>
         </div>
-        <div class="bg-white p-6 rounded-xl shadow text-center">
-          <h4 class="text-2xl font-bold text-green-600">120+</h4>
-          <p class="text-sm text-gray-600">Communities Involved</p>
+
+        <!-- Card 2 -->
+        <div
+          class="bg-white p-6 md:p-10 rounded-xl md:rounded-2xl shadow-md md:shadow-lg text-center min-h-[180px] md:min-h-[220px] flex flex-col justify-center transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl"
+        >
+          <h4
+            class="text-2xl md:text-4xl font-bold text-green-600 mb-1 md:mb-2"
+          >
+            120+
+          </h4>
+          <p class="text-sm md:text-base text-gray-600">Communities Involved</p>
         </div>
-        <div class="bg-white p-6 rounded-xl shadow text-center">
-          <h4 class="text-2xl font-bold text-green-600">30+</h4>
-          <p class="text-sm text-gray-600">Countries Reached</p>
+
+        <!-- Card 3 -->
+        <div
+          class="bg-white p-6 md:p-10 rounded-xl md:rounded-2xl shadow-md md:shadow-lg text-center min-h-[180px] md:min-h-[220px] flex flex-col justify-center transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl"
+        >
+          <h4
+            class="text-2xl md:text-4xl font-bold text-green-600 mb-1 md:mb-2"
+          >
+            30+
+          </h4>
+          <p class="text-sm md:text-base text-gray-600">Countries Reached</p>
         </div>
       </div>
     </section>
@@ -220,7 +250,7 @@
             </select>
             <button
               type="submit"
-              class="w-full bg-yellow-400 text-green-800 py-2 rounded font-semibold"
+              class="w-full bg-yellow-400 text-white py-2 rounded font-semibold hover:shadow-blue-600 hover:brightness-125 hover:scale-105 transition-all duration-300"
             >
               Donate Now
             </button>
@@ -228,12 +258,31 @@
         </div>
       </div>
     </section>
+
     <!-- footer -->
     <footer class="bg-green-900 text-white py-6 text-center">
       <div class="max-w-6xl mx-auto px-4">
         <p>© 2025 Green Earth. All Rights Reserved.</p>
       </div>
     </footer>
+
+    <!-- modal -->
+    <div
+      id="modal"
+      class="fixed inset-0 bg-black/50 hidden items-center justify-center p-4"
+    >
+      <div class="bg-white rounded max-w-2xl w-full p-6 relative">
+        <button
+          id="modalClose"
+          class="absolute right-3 top-3 text-gray-600"
+          aria-label="Close"
+        >
+          ✕
+        </button>
+        <div id="modalContent"></div>
+      </div>
+    </div>
+
     <script src="./script/index.js"></script>
   </body>
 </html>

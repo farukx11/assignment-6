@@ -15,6 +15,7 @@ const totalPriceEl = document.getElementById("totalPrice");
 const modal = document.getElementById("modal");
 const modalContent = document.getElementById("modalContent");
 const modalClose = document.getElementById("modalClose");
+
 // cart
 let cart = [];
 
@@ -61,6 +62,7 @@ function renderCategories(list) {
     loadPlants();
   });
   categoriesEl.appendChild(allBtn);
+
   // other categories
   list.forEach((cat) => {
     const id = cat.id ?? cat.category_id ?? "";
@@ -76,6 +78,7 @@ function renderCategories(list) {
     categoriesEl.appendChild(btn);
   });
 }
+
 // active category
 function setActiveCategory(id) {
   document
@@ -131,6 +134,7 @@ function renderPlants(items) {
       '<p class="col-span-full text-center text-gray-500">No plants found.</p>';
     return;
   }
+
   items.forEach((item) => {
     const card = document.createElement("div");
     card.className = "bg-white p-4 rounded shadow";
@@ -192,6 +196,7 @@ function renderPlants(items) {
     cardsGrid.appendChild(card);
   });
 }
+
 // modal function
 async function openModalWithPlant(id, fallback) {
   modalContent.innerHTML = '<div class="p-6">Loading...</div>';
@@ -296,3 +301,22 @@ function renderCart() {
   const total = cart.reduce((sum, it) => sum + it.price * it.qty, 0);
   totalPriceEl.textContent = formatBDT(total);
 }
+
+// donation form
+document.getElementById("donationForm").addEventListener("submit", (e) => {
+  e.preventDefault();
+  alert("Thank you for donating!");
+  e.target.reset();
+});
+
+// buttons scroll
+document
+  .getElementById("plantNowBtn")
+  .addEventListener("click", () => scrollToEl("plant"));
+document
+  .getElementById("getInvolved")
+  .addEventListener("click", () => scrollToEl("plant"));
+
+// initial Load
+loadCategories();
+loadPlants();

@@ -12,6 +12,7 @@
   background-size: cover;
   background-position: center;
 }
+
 /* category buttons */
 .category-btn {
   display: block;
@@ -49,5 +50,12 @@
 @keyframes spin {
   to {
     transform: rotate(360deg);
+  }
+}
+
+/* small responsive  */
+@media (max-width: 1024px) {
+  .card-img-placeholder {
+    height: 140px;
   }
 }
