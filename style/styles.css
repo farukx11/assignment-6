@@ -1,0 +1,14 @@
+/* container max-width */
+.container-max {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* card image placeholder */
+.card-img-placeholder {
+  background: #e6eef0;
+  height: 160px;
+  border-radius: 8px;
+  background-size: cover;
+  background-position: center;
+}

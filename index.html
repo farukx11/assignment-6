@@ -44,6 +44,94 @@
         </button>
       </div>
     </header>
+    <!-- left leaf  -->
+    <section
+      class="relative bg-cover py-16 px-4 md:px-10 flex flex-col md:flex-row items-center justify-between"
+    >
+      <div class="w-1/2 md:w-1/5 mb-6 md:mb-0">
+        <img
+          src="./assets/hero-leaf1.png"
+          alt=""
+          class="w-full h-auto mx-auto"
+        />
+      </div>
+
+      <!-- center text -->
+      <div class="w-full md:w-3/5 text-center">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-snug">
+          Plant a Tree, Grow a Future
+        </h1>
+        <p class="mt-4 text-base sm:text-lg md:text-xl max-w-2xl mx-auto">
+          Join our mission to plant 1 million trees and make the Earth greener
+          for future generations.
+        </p>
+        <button
+          id="getInvolved"
+          class="mt-6 bg-yellow-400 text-green-900 px-5 py-3 rounded-full font-semibold hover:bg-blue-100 transition-colors"
+        >
+          Get Involved
+        </button>
+      </div>
+
+      <!-- right leaf  -->
+      <div class="hidden md:block w-1/5">
+        <img src="./assets/hero-leaf2.png" alt="" class="w-full h-auto" />
+      </div>
+    </section>
+
+    <!-- main -->
+
+    <main
+      class="max-w-6xl mx-auto px-4 py-10 grid grid-cols-1 lg:grid-cols-12 gap-8"
+    >
+      <section
+        class="lg:col-span-12 mt-12 mb-4 flex justify-center bg-white rounded py-3"
+      >
+        <h2 class="text-center text-2xl md:text-3xl font-bold">
+          Choose Your Trees
+        </h2>
+      </section>
+
+      <!-- category sidebar -->
+      <aside class="lg:col-span-3 bg-white p-4 rounded shadow-sm">
+        <h3 class="font-semibold mb-3">Categories</h3>
+        <div id="categories" class="space-y-2">
+          <!-- category buttons injected here -->
+        </div>
+      </aside>
+
+      <!-- plant cards  -->
+      <section class="lg:col-span-6">
+        <!-- spinner -->
+        <div
+          id="spinner"
+          class="flex justify-center mb-4"
+          style="display: none"
+        >
+          <div class="spinner" role="status" aria-hidden="true"></div>
+        </div>
+
+        <div
+          id="cardsGrid"
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
+          <!-- plant cards inserted here -->
+        </div>
+      </section>
+
+      <!-- cart sidebar -->
+      <aside class="lg:col-span-3 bg-white p-4 rounded shadow-sm">
+        <h3 class="font-semibold mb-3">Your Cart</h3>
+        <ul id="cartList" class="space-y-2 text-sm">
+          <li class="text-gray-500">Cart is empty</li>
+        </ul>
+
+        <div class="mt-4 flex justify-between items-center font-semibold">
+          <span>Total:</span>
+          <span id="totalPrice">৳ 0</span>
+        </div>
+      </aside>
+    </main>
     <script src="./script/index.js"></script>
   </body>
 </html>
