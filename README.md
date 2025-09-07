@@ -132,14 +132,14 @@ console.log(city); // London
 const data = {
 id: 1,
 info: {
-email: 'alice@example.com',
-phone: '123-456'
+email: 'farukxx1122@gmail.com',
+phone: '1706922929'
 }
 };
 
 const { info: { email, phone } } = data;
-console.log(email); // alice@example.com
-console.log(phone); // 123-456
+console.log(email);
+console.log(phone);
 
 5. Explain template literals in ES6. How are they different from string concatenation?
 

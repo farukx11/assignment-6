@@ -12,3 +12,20 @@
   background-size: cover;
   background-position: center;
 }
+/* category buttons */
+.category-btn {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 0.25rem;
+  border: 1px solid #d2d6dc; /* border-gray-300 */
+  border-radius: 0.5rem;
+  color: #4a5568; /* text-gray-700 */
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.category-btn:hover {
+  background-color: #c6f6d5; /* hover:bg-green-100 approximation */
+}
