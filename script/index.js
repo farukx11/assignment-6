@@ -192,3 +192,107 @@ function renderPlants(items) {
     cardsGrid.appendChild(card);
   });
 }
+// modal function
+async function openModalWithPlant(id, fallback) {
+  modalContent.innerHTML = '<div class="p-6">Loading...</div>';
+  modal.classList.remove("hidden");
+
+  if (!id) return renderModalContent(fallback ?? {});
+
+  try {
+    const res = await fetch(API.plant(id));
+    const json = await res.json();
+    const plant = json?.data ?? fallback ?? {};
+    renderModalContent(plant);
+  } catch (err) {
+    console.error(err);
+    renderModalContent(
+      fallback ?? { name: "Unknown", description: "No details available." }
+    );
+  }
+}
+
+function renderModalContent(plant) {
+  const name = plant.name ?? plant.plant_name ?? "Plant";
+  const img = plant.image ?? "./assets/placeholder.png";
+  const desc = plant.description ?? plant.details ?? "No details available.";
+  const category = plant.category ?? plant.category_name ?? "—";
+  const price = plant.price ?? plant.cost ?? 500;
+
+  modalContent.innerHTML = `
+    <h3 class="text-xl font-semibold">${name}</h3>
+    <div class="mt-3 grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="min-h-[180px] bg-gray-100 rounded" style="background-image: url('${img}'); background-size:cover; background-position:center"></div>
+      <div>
+        <p class="text-sm text-gray-700">${desc}</p>
+        <p class="mt-3"><strong>Category:</strong> ${category}</p>
+        <p class="mt-1"><strong>Price:</strong> ${formatBDT(price)}</p>
+      </div>
+    </div>
+  `;
+}
+
+modalClose.addEventListener("click", () => modal.classList.add("hidden"));
+modal.addEventListener("click", (e) => {
+  if (e.target === modal) modal.classList.add("hidden");
+});
+
+// cart function
+function addToCart(item) {
+  const existing = cart.find((c) => c.id === item.id);
+  if (existing) existing.qty = (existing.qty || 1) + 1;
+  else cart.push({ ...item, qty: 1 });
+  renderCart();
+}
+
+function removeFromCart(index) {
+  cart.splice(index, 1);
+  renderCart();
+}
+
+function renderCart() {
+  cartList.innerHTML = "";
+  if (cart.length === 0) {
+    cartList.innerHTML = '<li class="text-gray-500">Cart is empty</li>';
+    totalPriceEl.textContent = formatBDT(0);
+    return;
+  }
+
+  cart.forEach((it, idx) => {
+    const li = document.createElement("li");
+    li.className = "flex justify-between items-center";
+
+    const nameSpan = document.createElement("span");
+    nameSpan.className = "truncate";
+    nameSpan.textContent = it.name;
+    nameSpan.title = it.name;
+
+    const rightWrap = document.createElement("div");
+    rightWrap.className = "flex items-center gap-3";
+
+    const priceSpan = document.createElement("span");
+    priceSpan.textContent = `${formatBDT(it.price)} × ${it.qty}`;
+
+    const removeBtn = document.createElement("button");
+    removeBtn.className = "text-red-500 remove-btn";
+    removeBtn.textContent = "✕";
+    removeBtn.addEventListener("click", () => {
+      if (cart[idx].qty > 1) cart[idx].qty -= 1;
+      else {
+        removeFromCart(idx);
+        return;
+      }
+      renderCart();
+    });
+
+    rightWrap.appendChild(priceSpan);
+    rightWrap.appendChild(removeBtn);
+    li.appendChild(nameSpan);
+    li.appendChild(rightWrap);
+
+    cartList.appendChild(li);
+  });
+
+  const total = cart.reduce((sum, it) => sum + it.price * it.qty, 0);
+  totalPriceEl.textContent = formatBDT(total);
+}
