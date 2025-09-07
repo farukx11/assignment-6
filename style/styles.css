@@ -29,3 +29,19 @@
 .category-btn:hover {
   background-color: #c6f6d5; /* hover:bg-green-100 approximation */
 }
+
+.category-btn.active {
+  background-color: #2f855a; /* bg-green-700 */
+  color: white;
+  font-weight: 600;
+}
+
+/* spinner */
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.06);
+  border-top-color: #2f855a; /* spinner top color */
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  animation: spin 0.9s linear infinite;
+}

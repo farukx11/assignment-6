@@ -166,6 +166,68 @@
         </div>
       </div>
     </section>
+    <!-- our impact -->
+
+    <section id="impact" class="bg-green-100 py-20">
+      <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded-xl shadow text-center">
+          <h4 class="text-2xl font-bold text-green-600">500K+</h4>
+          <p class="text-sm text-gray-600">Trees Planted</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow text-center">
+          <h4 class="text-2xl font-bold text-green-600">120+</h4>
+          <p class="text-sm text-gray-600">Communities Involved</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow text-center">
+          <h4 class="text-2xl font-bold text-green-600">30+</h4>
+          <p class="text-sm text-gray-600">Countries Reached</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- plant a tree form -->
+
+    <section id="plant" class="bg-green-800 text-white py-10">
+      <div class="max-w-6xl mx-auto px-4">
+        <h3 class="text-center text-2xl font-bold mb-6">Plant a Tree Today</h3>
+        <div class="max-w-md mx-auto bg-green-700 p-6 rounded-xl shadow">
+          <form id="donationForm" class="space-y-3">
+            <input
+              required
+              name="name"
+              placeholder="Your Name"
+              class="w-full p-2 rounded text-gray-800 bg-white"
+            />
+            <input
+              required
+              name="email"
+              type="email"
+              placeholder="Your Email Address"
+              class="w-full p-2 rounded text-gray-800 bg-white"
+            />
+            <select
+              required
+              name="count"
+              class="w-full p-2 rounded text-gray-800 bg-white"
+            >
+              <option value="">Number of Trees</option>
+              <option value="1">1 Tree - $5</option>
+              <option value="2">2 Tree - $10</option>
+              <option value="3">3 Tree - $15</option>
+              <option value="4">4 Tree - $20</option>
+              <option value="5">5 Tree - $25</option>
+              <option value="6">6 Tree - $30</option>
+            </select>
+            <button
+              type="submit"
+              class="w-full bg-yellow-400 text-green-800 py-2 rounded font-semibold"
+            >
+              Donate Now
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
     <script src="./script/index.js"></script>
   </body>
 </html>
