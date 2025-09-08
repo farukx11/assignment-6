@@ -28,7 +28,7 @@
 }
 
 .category-btn:hover {
-  background-color: #c6f6d5; /* hover:bg-green-100 approximation */
+  background-color: #c6f6d5;
 }
 
 .category-btn.active {

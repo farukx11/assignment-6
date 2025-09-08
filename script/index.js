@@ -179,7 +179,9 @@ function renderPlants(items) {
 
     // add to cart
     const addBtn = document.createElement("button");
-    addBtn.className = "mt-4 w-full bg-green-700 text-white py-2 rounded";
+    addBtn.className =
+      "w-full bg-green-600 text-white px-4 py-1 rounded hover:bg-green-700 mt-4 cursor-pointer";
+
     addBtn.textContent = "Add to Cart";
     addBtn.addEventListener("click", () =>
       addToCart({ id: plantId, name: displayName, price: Number(p) })
@@ -302,6 +304,7 @@ function renderCart() {
 }
 
 // donation form
+
 document.getElementById("donationForm").addEventListener("submit", (e) => {
   e.preventDefault();
   alert("Thank you for donating!");

@@ -85,7 +85,7 @@
     <!-- main -->
 
     <main
-      class="max-w-6xl mx-auto px-4 py-10 grid grid-cols-1 lg:grid-cols-12 gap-8"
+      class="mx-4 md:mx-32 px-4 py-10 grid grid-cols-1 lg:grid-cols-12 gap-8"
     >
       <section
         class="lg:col-span-12 mt-12 mb-4 flex justify-center bg-white rounded py-3"
@@ -96,7 +96,7 @@
       </section>
 
       <!-- category sidebar -->
-      <aside class="lg:col-span-3 bg-white p-4 rounded shadow-sm">
+      <aside class="md:col-span-2 bg-white p-4 rounded shadow-sm">
         <h3 class="font-semibold mb-3">Categories</h3>
         <div id="categories" class="space-y-2">
           <!-- category buttons injected here -->
@@ -104,7 +104,7 @@
       </aside>
 
       <!-- plant cards  -->
-      <section class="lg:col-span-6">
+      <section class="md:col-span-8">
         <!-- spinner -->
         <div
           id="spinner"
@@ -123,7 +123,7 @@
       </section>
 
       <!-- cart sidebar -->
-      <aside class="lg:col-span-3 bg-white p-4 rounded shadow-sm">
+      <aside class="md:col-span-2 bg-white p-4 rounded shadow-sm">
         <h3 class="font-semibold mb-3">Your Cart</h3>
         <ul id="cartList" class="space-y-2 text-sm">
           <li class="text-gray-500">Cart is empty</li>
@@ -138,17 +138,16 @@
 
     <!-- about section -->
 
-    <section id="about" class="max-w-6xl mx-auto px-4 py-8">
+    <section id="about" class="mx-4 md:mx-32 px-4 py-8">
       <div
         class="bg-white rounded-xl p-6 shadow-sm grid gap-6 md:grid-cols-2 items-center"
       >
-        <!-- Full-width Heading -->
+        <!-- full-width heading -->
         <h3 class="text-3xl font-bold mb-4 text-center md:col-span-2">
           About the Campaign
         </h3>
 
         <!-- image -->
-        <!-- <img src="./assets/about.png" alt="plant" class="w-full rounded" /> -->
         <img
           src="./assets/about.png"
           alt="plant"
@@ -170,14 +169,13 @@
         </div>
       </div>
     </section>
-
     <!-- our impact -->
 
-    <section id="impact" class="bg-green-100 py-20">
+    <section id="impact" class="bg-green-100 py-10 md:py-20">
       <h3 class="text-3xl font-bold mb-10 text-center">Our Impact</h3>
 
-      <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-6">
-        <!-- Card 1 -->
+      <div class="mx-4 md:mx-32 px-4 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- card 1 -->
         <div
           class="bg-white p-6 md:p-10 rounded-xl md:rounded-2xl shadow-md md:shadow-lg text-center min-h-[180px] md:min-h-[220px] flex flex-col justify-center transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl"
         >
@@ -189,7 +187,7 @@
           <p class="text-sm md:text-base text-gray-600">Trees Planted</p>
         </div>
 
-        <!-- Card 2 -->
+        <!-- card 2 -->
         <div
           class="bg-white p-6 md:p-10 rounded-xl md:rounded-2xl shadow-md md:shadow-lg text-center min-h-[180px] md:min-h-[220px] flex flex-col justify-center transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl"
         >
@@ -201,7 +199,7 @@
           <p class="text-sm md:text-base text-gray-600">Communities Involved</p>
         </div>
 
-        <!-- Card 3 -->
+        <!-- card 3 -->
         <div
           class="bg-white p-6 md:p-10 rounded-xl md:rounded-2xl shadow-md md:shadow-lg text-center min-h-[180px] md:min-h-[220px] flex flex-col justify-center transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl"
         >
@@ -218,7 +216,7 @@
     <!-- plant a tree form -->
 
     <section id="plant" class="bg-green-800 text-white py-10">
-      <div class="max-w-6xl mx-auto px-4">
+      <div class="mx-4 md:mx-32 px-4">
         <h3 class="text-center text-2xl font-bold mb-6">Plant a Tree Today</h3>
         <div class="max-w-md mx-auto bg-green-700 p-6 rounded-xl shadow">
           <form id="donationForm" class="space-y-3">
@@ -267,14 +265,15 @@
     </footer>
 
     <!-- modal -->
+
     <div
       id="modal"
       class="fixed inset-0 bg-black/50 hidden items-center justify-center p-4"
     >
-      <div class="bg-white rounded max-w-2xl w-full p-6 relative">
+      <div class="bg-white rounded max-w-2xl w-[85%] p-6 relative mx-auto">
         <button
           id="modalClose"
-          class="absolute right-3 top-3 text-gray-600"
+          class="absolute right-3 top-8 text-gray-600"
           aria-label="Close"
         >
           ✕
