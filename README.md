@@ -169,4 +169,4 @@ const greeting = 'Hello ' + name + ', you are ' + age + ' years old.';
 
 console.log(greeting);
 
-Template literals make string construction simpler, readable, and more powerful than traditional concatenation.
+Template literals make string construction simpler, readable, and more powerful than traditional concatenation..
