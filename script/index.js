@@ -1,4 +1,3 @@
-// api endpoints
 const API = {
   categories: "https://openapi.programming-hero.com/api/categories",
   plants: "https://openapi.programming-hero.com/api/plants",
@@ -6,7 +5,7 @@ const API = {
   plant: (id) => `https://openapi.programming-hero.com/api/plant/${id}`,
 };
 
-// dom elements
+// elements
 const categoriesEl = document.getElementById("categories");
 const cardsGrid = document.getElementById("cardsGrid");
 const spinner = document.getElementById("spinner");
@@ -52,7 +51,7 @@ async function loadCategories() {
 function renderCategories(list) {
   categoriesEl.innerHTML = "";
 
-  // all Trees button
+  // all trees button
   const allBtn = document.createElement("button");
   allBtn.textContent = "All Trees";
   allBtn.className = "w-full text-left p-2 rounded border category-btn active";
@@ -197,7 +196,7 @@ function renderPlants(items) {
   });
 }
 
-// modal function
+// modal functions
 async function openModalWithPlant(id, fallback) {
   modalContent.innerHTML = '<div class="p-6">Loading...</div>';
   modal.classList.remove("hidden");
@@ -242,7 +241,7 @@ modal.addEventListener("click", (e) => {
   if (e.target === modal) modal.classList.add("hidden");
 });
 
-// cart function
+// cart functions
 function addToCart(item) {
   const existing = cart.find((c) => c.id === item.id);
   if (existing) existing.qty = (existing.qty || 1) + 1;
